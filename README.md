@@ -10,3 +10,5 @@
 * Julian Wong - wongjulan4213
 * Misha Obukhov - mishaobu
 
+Tech stack: next.js
+
