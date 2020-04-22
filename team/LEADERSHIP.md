@@ -5,5 +5,5 @@
 | Mon 04/13 | Leron Reznikov    | Led team discussion to define MVP, acceptance criteria | 
 | Tue 04/14 | Lina Zeng         | Led team discussion of learning plan                   | 
 | Mon 04/20 | Cindy Zhao        | Will lead first Retro                                  | 
-| Mon 04/27 | Julian Wong       | Will lead second Retro                                 | 
+| Mon 05/04 | Julian Wong       | Will lead second Retro                                 | 
 
