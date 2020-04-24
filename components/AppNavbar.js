@@ -17,6 +17,11 @@ function AppNavbar(props) {
         </Link>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
+          <Nav className="mr-auto">
+            <Link href="/journal" passHref={true}>
+              <Nav.Link>journal</Nav.Link>
+            </Link>
+          </Nav>
           <Nav>
             {user ? (
               <NavDropdown
