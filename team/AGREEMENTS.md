@@ -9,4 +9,4 @@
 
 * We will put in time outside of class if neccesary for the success of the team
 
-* We will be respectful to each other at all times
+* We will be respectful to each other at all times 
