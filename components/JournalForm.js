@@ -1,3 +1,5 @@
+import Button from "react-bootstrap/Button";
+
 class JournalForm extends React.Component {
   constructor(props) {
     super(props);
@@ -32,6 +34,7 @@ class JournalForm extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           How many hours of sleep did you have?
+          <br></br>
           <select
             name="sleep"
             value={this.state.sleep}
@@ -53,6 +56,7 @@ class JournalForm extends React.Component {
         <br></br>
         <label>
           How are you feeling today?
+          <br></br>
           <select
             name="mood"
             value={this.state.mood}
@@ -65,7 +69,13 @@ class JournalForm extends React.Component {
           </select>
         </label>
         <br></br>
-        <input type="submit" value="Submit" />
+        <Button
+          variant="success"
+          as="input"
+          type="submit"
+          value="Submit"
+          onClick={this.handleSubmit}
+        ></Button>
       </form>
     );
   }

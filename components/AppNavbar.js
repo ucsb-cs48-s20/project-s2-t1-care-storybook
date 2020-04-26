@@ -42,7 +42,7 @@ function AppNavbar(props) {
                 </NavDropdown.Item>
               </NavDropdown>
             ) : (
-              <Button data-cy="login" href="/api/login">
+              <Button variant="success" data-cy="login" href="/api/login">
                 Login
               </Button>
             )}
