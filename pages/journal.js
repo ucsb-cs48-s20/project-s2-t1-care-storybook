@@ -1,9 +1,13 @@
 import Layout from "../components/Layout";
 import JournalForm from "../components/JournalForm";
+import { optionalAuth } from "../utils/ssr";
 
-export default function MultiForm() {
+export const getServerSideProps = optionalAuth;
+export default function MultiForm(props) {
+  const user = props.user;
+
   return (
-    <Layout>
+    <Layout user={user}>
       <h1> let's grow together </h1>
       <JournalForm></JournalForm>
     </Layout>
