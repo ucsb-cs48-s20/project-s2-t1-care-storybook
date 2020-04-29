@@ -1,4 +1,5 @@
 import Button from "react-bootstrap/Button";
+import { mutate } from "swr";
 
 class JournalForm extends React.Component {
   constructor(props) {
@@ -18,15 +19,31 @@ class JournalForm extends React.Component {
     this.setState({ [name]: value });
   }
 
-  handleSubmit(event) {
-    alert(
+  async handleSubmit(event) {
+    /* alert(
       "You recorded " +
         this.state.sleep +
         " of sleep last night and that you were " +
         this.state.mood +
         " today"
-    );
+    ); */
     event.preventDefault();
+    const body = {
+      sleep: this.state.sleep,
+      mood: this.state.mood,
+    };
+
+    const res = await fetch("/api/daily", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    if (res.status === 201) {
+      const userObj = await res.json();
+      mutate(userObj);
+    } else {
+      setErrorMsg(await res.text());
+    }
   }
 
   render() {
