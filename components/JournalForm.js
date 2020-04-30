@@ -21,18 +21,13 @@ class JournalForm extends React.Component {
   }
 
   async handleSubmit(event) {
-    /* alert(
-      "You recorded " +
-        this.state.sleep +
-        " of sleep last night and that you were " +
-        this.state.mood +
-        " today"
-    ); */
+    var plantLevel = 0;
+    plantLevel += parseInt(this.state.sleep);
+
     event.preventDefault();
     const body = {
       user: this.state.user,
-      sleep: this.state.sleep,
-      mood: this.state.mood,
+      plantLevel: plantLevel,
     };
 
     const res = await fetch("/api/daily", {
