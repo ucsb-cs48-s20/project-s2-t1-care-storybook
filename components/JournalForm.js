@@ -4,7 +4,8 @@ import { mutate } from "swr";
 class JournalForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { sleep: "0 hour(s)", mood: "okay" };
+    console.log(props);
+    this.state = { user: props.user, sleep: "0 hour(s)", mood: "okay" };
 
     this.handleInputChange = this.handleInputChange.bind(this);
 
@@ -29,6 +30,7 @@ class JournalForm extends React.Component {
     ); */
     event.preventDefault();
     const body = {
+      user: this.state.user,
       sleep: this.state.sleep,
       mood: this.state.mood,
     };
@@ -41,7 +43,6 @@ class JournalForm extends React.Component {
     if (res.status === 201) {
       const userObj = await res.json();
       mutate(userObj);
-    } else {
     }
   }
 

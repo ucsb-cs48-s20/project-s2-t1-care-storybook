@@ -1,5 +1,4 @@
 import { MongoClient } from "mongodb";
-import nextConnect from "next-connect";
 
 const client = new MongoClient(
   "mongodb+srv://wongjulian4213:1234567890@plant-pmubx.azure.mongodb.net/test?retryWrites=true&w=majority",
@@ -9,15 +8,7 @@ const client = new MongoClient(
   }
 );
 
-async function database(req, res, next) {
+export async function database() {
   if (!client.isConnected()) await client.connect();
-  req.dbClient = client;
-  req.db = client.db("Plant");
-  return next();
+  return client.db("Plant");
 }
-
-const middleware = nextConnect();
-
-middleware.use(database);
-
-export default middleware;
