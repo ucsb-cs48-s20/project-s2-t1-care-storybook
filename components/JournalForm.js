@@ -42,7 +42,6 @@ class JournalForm extends React.Component {
       const userObj = await res.json();
       mutate(userObj);
     } else {
-      setErrorMsg(await res.text());
     }
   }
 
