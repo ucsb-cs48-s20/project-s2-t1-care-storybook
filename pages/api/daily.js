@@ -41,9 +41,6 @@ async function updatePlantLevel(req) {
     $setOnInsert: {
       user,
     },
-    $setOnInsert: {
-      PlantLevel: 0,
-    },
     $inc: {
       PlantLevel: req.body.plantLevel,
     },
