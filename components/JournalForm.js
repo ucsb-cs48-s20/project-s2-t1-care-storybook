@@ -81,13 +81,9 @@ class JournalForm extends React.Component {
           </select>
         </label>
         <br></br>
-        <Button
-          variant="success"
-          as="input"
-          type="submit"
-          value="Submit"
-          onClick={this.handleSubmit}
-        ></Button>
+        <Button variant="success" type="submit" href="/">
+          Submit
+        </Button>
       </form>
     );
   }
