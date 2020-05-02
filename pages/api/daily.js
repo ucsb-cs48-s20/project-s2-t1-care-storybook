@@ -23,7 +23,7 @@ async function getUser(req) {
 async function updatePlantLevel(req) {
   const { user } = req.body;
 
-  if (!user) {
+  if (!req.body) {
     throw {
       status: 400,
       message: "Missing User",
@@ -33,9 +33,9 @@ async function updatePlantLevel(req) {
   const client = await database();
   const users = client.collection("users");
 
-  const query = {
+  /*const query = {
     user,
-  };
+  };*/
 
   const mutation = {
     $setOnInsert: {
@@ -46,10 +46,14 @@ async function updatePlantLevel(req) {
     },
   };
 
-  const result = await users.findOneAndUpdate(query, mutation, {
-    upsert: true,
-    returnOriginal: false,
-  });
+  const result = await users.findOneAndUpdate(
+    { "user.sub": req.body.user.sub },
+    mutation,
+    {
+      upsert: true,
+      returnOriginal: false,
+    }
+  );
 
   return result.value;
 }
