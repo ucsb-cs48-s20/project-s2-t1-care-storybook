@@ -1,12 +1,12 @@
 import { database } from "../../utils/database";
 
 async function getUser(req) {
-  const { email } = req.body;
+  const { user } = req.body;
 
-  if (!name) {
+  if (!user) {
     throw {
       status: 400,
-      message: "Missing Email",
+      message: "Missing user",
     };
   }
 
@@ -14,7 +14,7 @@ async function getUser(req) {
   const users = client.collection("users");
 
   const query = {
-    email,
+    user,
   };
 
   return users.findOne(query);
