@@ -26,7 +26,7 @@ async function updatePlantLevel(req) {
   if (!user) {
     throw {
       status: 400,
-      message: "Missing Email",
+      message: "Missing User",
     };
   }
 
