@@ -1,9 +1,10 @@
 import Button from "react-bootstrap/Button";
+import { mutate } from "swr";
 
 class JournalForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { sleep: "0 hour(s)", mood: "okay" };
+    this.state = { user: props.user, sleep: "0 hour(s)", mood: "okay" };
 
     this.handleInputChange = this.handleInputChange.bind(this);
 
@@ -18,15 +19,25 @@ class JournalForm extends React.Component {
     this.setState({ [name]: value });
   }
 
-  handleSubmit(event) {
-    alert(
-      "You recorded " +
-        this.state.sleep +
-        " of sleep last night and that you were " +
-        this.state.mood +
-        " today"
-    );
+  async handleSubmit(event) {
+    var plantLevel = 0;
+    plantLevel += parseInt(this.state.sleep);
+
     event.preventDefault();
+    const body = {
+      user: this.state.user,
+      plantLevel: plantLevel,
+    };
+
+    const res = await fetch("/api/daily", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    if (res.status === 201) {
+      const userObj = await res.json();
+      mutate(userObj);
+    }
   }
 
   render() {
@@ -69,13 +80,9 @@ class JournalForm extends React.Component {
           </select>
         </label>
         <br></br>
-        <Button
-          variant="success"
-          as="input"
-          type="submit"
-          value="Submit"
-          onClick={this.handleSubmit}
-        ></Button>
+        <Button variant="success" type="submit">
+          Submit
+        </Button>
       </form>
     );
   }
