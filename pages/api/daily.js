@@ -21,9 +21,10 @@ import { database } from "../../utils/database";
 // }
 
 async function getPlantLevel(req) {
-  const { user } = req.body;
+  const { sub } = req.query;
+  console.log(req.query);
 
-  if (!req.body) {
+  if (!sub) {
     throw {
       status: 400,
       message: "Missing User",
@@ -33,7 +34,7 @@ async function getPlantLevel(req) {
   const client = await database();
   const users = client.collection("users");
 
-  return users.findOne({ "user.sub": req.body.user.sub }, { PlantLevel: 1 });
+  return users.findOne({ "user.sub": sub }, { PlantLevel: 1 });
 }
 
 async function updatePlantLevel(req) {
@@ -74,10 +75,12 @@ async function updatePlantLevel(req) {
   return result.value;
 }
 
-async function performAction(req) {
+async function performAction(req, res) {
   switch (req.method) {
     case "GET":
-      return getPlantLevel(req);
+      const plantLevel = await getPlantLevel(req);
+      res.end(JSON.stringify(plantLevel));
+      return;
     case "POST":
       return updatePlantLevel(req);
   }

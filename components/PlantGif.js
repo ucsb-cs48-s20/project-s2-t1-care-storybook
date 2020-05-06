@@ -12,20 +12,31 @@ class PlantGif extends React.Component {
   }
 
   async returnPlantLevel() {
-    const res = await fetch("/api/daily", {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(user),
-    });
+    const res = await fetch("/api/daily?sub=" + this.user.sub);
     // if (res.status === 201) {
     //   const userObj = await res.json();
     //   mutate(userObj);
     // }
-    return res;
+    return res.json();
   }
 
   handleInputChange(event) {
     //this.plant++;
+    if (this.plant < 10) {
+      this.plantIMG = "plantFrames/frame_0" + this.plant + "_delay-0.04s.gif";
+    } else if (this.plant < 60) {
+      this.plantIMG = "plantFrames/frame_" + this.plant + "_delay-0.04s.gif";
+    } else {
+      this.plant = 0;
+    }
+    console.log(this.plantIMG);
+
+    this.setState({ update: 0 });
+  }
+
+  async componentDidMount() {
+    const plantLevel = await this.returnPlantLevel();
+    this.plant = plantLevel.PlantLevel;
     if (this.plant < 10) {
       this.plantIMG = "plantFrames/frame_0" + this.plant + "_delay-0.04s.gif";
     } else if (this.plant < 60) {
