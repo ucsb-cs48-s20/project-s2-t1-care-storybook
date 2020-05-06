@@ -1,33 +1,33 @@
-# This is the README for team s2-t1-care #
+# This is the README for team s2-t1-care
 
+## Users can input how they're feeling / sleeping / eating and see a plant grow with them! the background matches your feelings, the plant grows while you're sleeping/eating well, etc. (just a representation of how you take care of yourself)
 
-## Users can input how they're feeling / sleeping / eating and see a plant grow with them! the background matches your feelings, the plant grows while you're sleeping/eating well, etc. (just a representation of how you take care of yourself) ##
+# Team Members
 
-# Team Members #
-* Leron Reznikov - reznikovl
-* Lina Zeng - xitsleena
-* Cindy Zhao - cindy126
-* Julian Wong - wongjulan4213
-* Misha Obukhov - mishaobu
+- Leron Reznikov - reznikovl
+- Lina Zeng - xitsleena
+- Cindy Zhao - cindy126
+- Julian Wong - wongjulan4213
+- Misha Obukhov - mishaobu
 
 Tech stack: next.js
 
-# Details #
-* A interactive journal app that has only one kind of user: journalist 
-* The user starts off with little seedling. The user can select from a number of things to track - such as exercise, sleep, water intake, productive time, custom option (after MVP). Every day, the user should enter their stats from their day. Depending on how successful their day was, the plant would experience different effects (growing, more leaves, generally looking prettier/changing color). As time goes on, goals could automatically increase to ensure different levels. Eventually, a bad day will also affect the plant negatively. 
+# Details
 
-* MVP:
-  *  Google Oauth/some account system
-  * Data entry for users to put in stats
-    * yes/no options 
-    * good/bad day -> change to rating system 
-  * Some visual that changes with input 
-  * Need a database to store journal entries / current state 
+- A interactive journal app that has only one kind of user: journalist
+- The user starts off with little seedling. The user can select from a number of things to track - such as exercise, sleep, water intake, productive time, custom option (after MVP). Every day, the user should enter their stats from their day. Depending on how successful their day was, the plant would experience different effects (growing, more leaves, generally looking prettier/changing color). As time goes on, goals could automatically increase to ensure different levels. Eventually, a bad day will also affect the plant negatively.
 
-* After MVP:
-  * Having automatic goals set based on initial user input
-  * email /text? reminders to update your plant
-  * custom option to track - select from amount, time, etc. and let the program set goals for you
-  * custom plant / room / visuals 
+- MVP:
 
+  - Google Oauth/some account system
+  - Data entry for users to put in stats
+    - yes/no options
+    - good/bad day -> change to rating system
+  - Some visual that changes with input
+  - Need a database to store journal entries / current state
 
+- After MVP:
+  - Having automatic goals set based on initial user input
+  - email /text? reminders to update your plant
+  - custom option to track - select from amount, time, etc. and let the program set goals for you
+  - custom plant / room / visuals

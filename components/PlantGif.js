@@ -28,7 +28,8 @@ class PlantGif extends React.Component {
     return (
       <>
         <Button name="sleep" onClick={this.handleInputChange}>
-          {" "}Grow!{" "}
+          {" "}
+          Grow!{" "}
         </Button>
 
         <Image src={this.plantIMG}></Image>
