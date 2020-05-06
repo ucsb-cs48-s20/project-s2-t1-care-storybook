@@ -4,14 +4,28 @@ import Image from "react-bootstrap/Image";
 class PlantGif extends React.Component {
   constructor(props) {
     super(props);
+    this.user = props.user;
     this.state = { value: 0 };
-    this.plant = 0;
+    this.plant = 10;
     this.plantIMG = "plantFrames/frame_00_delay-0.04s.gif";
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
+  async returnPlantLevel() {
+    const res = await fetch("/api/daily", {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(user),
+    });
+    // if (res.status === 201) {
+    //   const userObj = await res.json();
+    //   mutate(userObj);
+    // }
+    return res;
+  }
+
   handleInputChange(event) {
-    this.plant++;
+    //this.plant++;
     if (this.plant < 10) {
       this.plantIMG = "plantFrames/frame_0" + this.plant + "_delay-0.04s.gif";
     } else if (this.plant < 60) {

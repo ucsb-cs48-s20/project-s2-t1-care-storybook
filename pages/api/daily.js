@@ -1,23 +1,39 @@
 import { database } from "../../utils/database";
 
-async function getUser(req) {
+// async function getUser(req) {
+//   const { user } = req.body;
+
+//   if (!user) {
+//     throw {
+//       status: 400,
+//       message: "Missing user",
+//     };
+//   }
+
+//   const client = await database();
+//   const users = client.collection("users");
+
+//   const query = {
+//     user,
+//   };
+
+//   return users.findOne(query);
+// }
+
+async function getPlantLevel(req) {
   const { user } = req.body;
 
-  if (!user) {
+  if (!req.body) {
     throw {
       status: 400,
-      message: "Missing user",
+      message: "Missing User",
     };
   }
 
   const client = await database();
   const users = client.collection("users");
 
-  const query = {
-    user,
-  };
-
-  return users.findOne(query);
+  return users.findOne({ "user.sub": req.body.user.sub }, { PlantLevel: 1 });
 }
 
 async function updatePlantLevel(req) {
@@ -61,7 +77,7 @@ async function updatePlantLevel(req) {
 async function performAction(req) {
   switch (req.method) {
     case "GET":
-      return getUser(req);
+      return getPlantLevel(req);
     case "POST":
       return updatePlantLevel(req);
   }
