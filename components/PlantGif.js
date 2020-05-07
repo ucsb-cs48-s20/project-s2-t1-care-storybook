@@ -7,7 +7,7 @@ class PlantGif extends React.Component {
     this.user = props.user;
     this.state = { value: 0 };
     this.plant = 10;
-    this.plantIMG = "plantFrames/frame_00_delay-0.04s.gif";
+    this.plantIMG = "plantframes/frame_00_delay-0.04s.gif";
   }
 
   async returnPlantLevel() {
