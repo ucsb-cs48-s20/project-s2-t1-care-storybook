@@ -44,7 +44,7 @@ class JournalForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          How many hours of sleep did you have?
+          how many hours of sleep did you have?
           <br></br>
           <select
             name="sleep"
@@ -66,7 +66,7 @@ class JournalForm extends React.Component {
         </label>
         <br></br>
         <label>
-          How are you feeling today?
+          how are you feeling today?
           <br></br>
           <select
             name="mood"
@@ -81,7 +81,7 @@ class JournalForm extends React.Component {
         </label>
         <br></br>
         <Button variant="success" type="submit">
-          Submit
+          submit
         </Button>
       </form>
     );

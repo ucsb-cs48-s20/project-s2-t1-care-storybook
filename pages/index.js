@@ -1,5 +1,6 @@
 import Layout from "../components/Layout";
 import { optionalAuth } from "../utils/ssr";
+import PlantGif from "../components/PlantGif";
 
 export const getServerSideProps = optionalAuth;
 
@@ -10,8 +11,8 @@ function HomePage(props) {
     <Layout user={user}>
       {user ? (
         <div>
-          You're logged in! Here's what the server knows about you:
-          <pre>{JSON.stringify(user, null, "\t")}</pre>
+          <h1>chlorophyll your journal to take care of your plant!</h1>
+          <PlantGif user={user}></PlantGif>
         </div>
       ) : (
         <div>

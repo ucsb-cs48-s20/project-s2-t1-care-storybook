@@ -11,7 +11,6 @@ export default function MultiForm(props) {
     <Layout user={user}>
       <h1> let's grow together </h1>
       <JournalForm user={user}></JournalForm>
-      <PlantGif />
     </Layout>
   );
 }
