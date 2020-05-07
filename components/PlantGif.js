@@ -27,9 +27,9 @@ class PlantGif extends React.Component {
       this.plant = 0;
     }
     if (this.plant < 10) {
-      this.plantIMG = "plantFrames/frame_0" + this.plant + "_delay-0.04s.gif";
+      this.plantIMG = "plantframes/frame_0" + this.plant + "_delay-0.04s.gif";
     } else if (this.plant < 60) {
-      this.plantIMG = "plantFrames/frame_" + this.plant + "_delay-0.04s.gif";
+      this.plantIMG = "plantframes/frame_" + this.plant + "_delay-0.04s.gif";
     } else {
       this.plant = 0;
     }
