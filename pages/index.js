@@ -11,9 +11,8 @@ function HomePage(props) {
     <Layout user={user}>
       {user ? (
         <div>
+          <h1>chlorophyll your journal to take care of your plant!</h1>
           <PlantGif user={user}></PlantGif>
-          You're logged in! Here's what the server knows about you:
-          <pre>{JSON.stringify(user, null, "\t")}</pre>
         </div>
       ) : (
         <div>
