@@ -36,7 +36,11 @@ class PlantGif extends React.Component {
 
   async componentDidMount() {
     const plantLevel = await this.returnPlantLevel();
-    this.plant = plantLevel.PlantLevel;
+    if (plantLevel) {
+      this.plant = plantLevel.PlantLevel;
+    } else {
+      this.plant = 1;
+    }
     if (this.plant < 10) {
       this.plantIMG = "plantFrames/frame_0" + this.plant + "_delay-0.04s.gif";
     } else if (this.plant < 60) {
