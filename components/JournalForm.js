@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import { mutate } from "swr";
-import { withRouter } from "react-router-dom";
+import Router from "next/router";
 
 export class JournalForm extends React.Component {
   constructor(props) {
@@ -25,6 +25,7 @@ export class JournalForm extends React.Component {
     plantLevel += parseInt(this.state.sleep);
 
     event.preventDefault();
+
     const body = {
       user: this.state.user,
       plantLevel: plantLevel,
@@ -35,12 +36,11 @@ export class JournalForm extends React.Component {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     });
-    if (res.status === 201) {
+    /* if (res.status === 201) {
       const userObj = await res.json();
       mutate(userObj);
-    }
-
-    this.props.history.push("/");
+    } */
+    Router.push("/");
   }
 
   render() {
@@ -90,4 +90,4 @@ export class JournalForm extends React.Component {
     );
   }
 }
-export default withRouter(JournalForm);
+export default JournalForm;
