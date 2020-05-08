@@ -21,7 +21,6 @@ export class JournalForm extends React.Component {
   }
 
   async handleSubmit(event) {
-    event.preventDefault();
     var plantLevel = 0;
     plantLevel += parseInt(this.state.sleep);
 
