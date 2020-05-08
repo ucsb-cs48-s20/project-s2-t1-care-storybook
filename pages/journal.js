@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import JournalForm from "../components/JournalForm";
+import { JournalForm } from "../components/JournalForm";
 import { optionalAuth } from "../utils/ssr";
 import PlantGif from "../components/PlantGif";
 

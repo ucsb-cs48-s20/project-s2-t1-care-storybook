@@ -1,7 +1,8 @@
 import Button from "react-bootstrap/Button";
 import { mutate } from "swr";
+import { withRouter } from "react-router-dom";
 
-class JournalForm extends React.Component {
+export class JournalForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { user: props.user, sleep: "0 hour(s)", mood: "okay" };
@@ -20,6 +21,7 @@ class JournalForm extends React.Component {
   }
 
   async handleSubmit(event) {
+    event.preventDefault();
     var plantLevel = 0;
     plantLevel += parseInt(this.state.sleep);
 
@@ -38,11 +40,13 @@ class JournalForm extends React.Component {
       const userObj = await res.json();
       mutate(userObj);
     }
+
+    this.props.history.push("/");
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit.bind(this)}>
         <label>
           how many hours of sleep did you have?
           <br></br>
@@ -87,4 +91,4 @@ class JournalForm extends React.Component {
     );
   }
 }
-export default JournalForm;
+export default withRouter(JournalForm);

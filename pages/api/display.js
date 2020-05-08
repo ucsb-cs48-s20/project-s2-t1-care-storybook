@@ -18,7 +18,6 @@ async function getPlantLevel(req) {
     { PlantLevel: 1 }
   );
 
-  console.log(result);
   return result;
 }
 
