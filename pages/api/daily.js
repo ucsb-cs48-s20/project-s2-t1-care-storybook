@@ -71,7 +71,7 @@ async function updatePlantLevel(req) {
     }
   );
 
-  return client.close;
+  return result.value;
 }
 
 async function performAction(req, res) {
