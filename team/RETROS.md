@@ -1,14 +1,14 @@
-# Retro 05/04/20
+# Retro 05/11/20
 
 - Led by: Julian Wong
-- Present: name1, name2, ... , nameN
-- Absent: name1, name2, ...
+- Present: Lina Zeng, Leron Reznikov, Cindy Zhao, Misha Obukhov
+- Absent: none
 
 ## Action item
 
-- a goal: identify something the team wants to get better at
-- a change: identify one thing that the team will change about how it works together
-- a measurement: identify at least one way to measure whether the change helped the team acheive the goal, or move closer to it.
+- a goal: be more consistent on the Kanban board such as creating new entries into the kanban board and assigning them to members
+- a change: start going to the office hours as a team
+- a measurement: being able to not have to fix the Kanban board at random time intervals and see how many office hours we all go together to
 
 ## Brief description of how retro went
 
