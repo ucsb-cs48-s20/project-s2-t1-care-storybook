@@ -12,12 +12,9 @@
 
 ## Brief description of how retro went
 
-Retro leader fill this in.
-
-- A brief description of what retro outline or process you used.
-- A brief assessment of how it went.
-- What advice would you give to the next person leading a retro
-  based on what you learned today?
+- We used the stop, start, continue template
+- We were able to identify two workflow problems that we will address in the coming weeks
+- Figure out a template and how you're going to do it before retro
 
 # Retro 04/20/20
 
