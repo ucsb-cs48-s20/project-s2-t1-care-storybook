@@ -1,8 +1,12 @@
-# Status, Monday 04/27/2020
+# Status, Monday 05/12/2020
 
-## Sprint Goal for Monday 04/27 through Monday 05/04
+* Leader: Misha Obukhov
+* Present: All
+* Absent: None
 
-- Connect database with app and have form submission reflect in database
+## Sprint Goal for Tues 05/12 through Tues 05/19
+
+
 
 ## Brief description of MVP
 
