@@ -8,3 +8,4 @@
 | Mon 05/04 | Julian Wong    | Will lead second Retro                                 |
 | Tue 05/05 | Misha Obukhov  | Will lead Sprint Goal discussion                       |
 | Thu 05/07 | Misha Obukhov  | Demo of MVP                                            |
+| Tue 05/12 | Misha Obukhov  | Sprint Meeting                                         |
