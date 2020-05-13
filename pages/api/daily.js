@@ -22,7 +22,6 @@ import { database } from "../../utils/database";
 
 async function getPlantLevel(req) {
   const { sub } = req.query;
-  console.log(req.query);
 
   if (!sub) {
     throw {
@@ -82,7 +81,10 @@ async function performAction(req, res) {
       res.end(JSON.stringify(plantLevel));
       return;
     case "POST":
-      return updatePlantLevel(req);
+      updatePlantLevel(req);
+      res.status(204);
+      res.end();
+      return;
   }
   throw { status: 405 };
 }
