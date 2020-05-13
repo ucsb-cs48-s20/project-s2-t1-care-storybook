@@ -49,10 +49,10 @@ class PlantGif extends React.Component {
       <div style={{
         position: 'absolute', left: '50%', top: '50%',
         transform: 'translate(-50%, -75%)',
+        backgroundColor: 'palegoldenrod',
     }}>
         {/* <Image src={this.plantIMG} style = {{mixBlendMode: 'multiply', margin: 'auto', align: 'center'}}/> */}
-        <image src = {this.plantIMG} style  = {{maxWidth: '100%', maxHeight: '100%'}}/>
-        <image src = "plantframes/frame_00_delay-0.04s.gif"/>
+        <img src = {this.plantIMG} style  = {{maxWidth: '100%', maxHeight: '100%', mixBlendMode: 'multiply'}}/>
       </div>
     );
   }

@@ -4,7 +4,7 @@ var style1 = {
   position: "absolute",
   bottom: "10px",
   textAlign: "center",
-  margin: "auto"
+  margin: "auto",
 }
 
 function AppFooter() {
