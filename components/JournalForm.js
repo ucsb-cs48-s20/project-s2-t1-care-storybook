@@ -26,9 +26,19 @@ export class JournalForm extends React.Component {
 
     event.preventDefault();
 
+    var d = new Date();
+    var date = d.getMonth() + 1 + " " + d.getDate() + " " + d.getFullYear();
+    console.log(date);
+    const entry = {
+      date: date,
+      todaySleep: this.state.sleep,
+      todayMood: this.state.mood,
+    };
+
     const body = {
       user: this.state.user,
       plantLevel: plantLevel,
+      entry: entry,
     };
 
     const res = await fetch("/api/daily", {

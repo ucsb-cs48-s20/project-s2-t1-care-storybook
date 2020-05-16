@@ -13,6 +13,7 @@ class PlantGif extends React.Component {
     this.state = { value: 0 };
     this.plant = 10;
     this.plantIMG = "plantframes/frame_00_delay-0.04s.gif";
+    this.firstLevel = 0;
   }
 
   async returnPlantLevel() {
@@ -39,6 +40,9 @@ class PlantGif extends React.Component {
       this.plant = 0;
     }
     console.log(this.plant);
+    console.log(plantLevel.testList);
+
+    this.firstLevel = plantLevel.testList;
 
     this.setState({ update: 0 });
   }
@@ -64,6 +68,7 @@ class PlantGif extends React.Component {
             mixBlendMode: "multiply",
           }}
         />
+        <pre>{JSON.stringify(this.firstLevel, null, "\t")}</pre>
       </div>
     );
   }
