@@ -40,9 +40,10 @@ class PlantGif extends React.Component {
       this.plant = 0;
     }
     console.log(this.plant);
-    console.log(plantLevel.testList);
-
-    this.firstLevel = plantLevel.testList;
+    if (plantLevel) {
+      console.log(plantLevel.testList);
+      this.firstLevel = plantLevel.testList;
+    }
 
     this.setState({ update: 0 });
   }
