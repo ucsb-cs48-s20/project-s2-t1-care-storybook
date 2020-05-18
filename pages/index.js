@@ -10,9 +10,17 @@ function HomePage(props) {
   return (
     <Layout user={user}>
       {user ? (
-        <div style = {{alignItems: 'center', margin: 'auto', justifyContent: 'center'}}>
-          <h1 style = {{align: 'center'}}>chlorophyll your journal to take care of your plant!</h1>
-          <PlantGif user={user} style = {{backgroundColor: 'transparent'}}/>
+        <div
+          style={{
+            alignItems: "center",
+            margin: "auto",
+            justifyContent: "center",
+          }}
+        >
+          <h1 style={{ align: "center" }}>
+            chlorophyll your journal to take care of your plant!
+          </h1>
+          <PlantGif user={user} style={{ backgroundColor: "transparent" }} />
         </div>
       ) : (
         <div>

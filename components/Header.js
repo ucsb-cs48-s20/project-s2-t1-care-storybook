@@ -24,7 +24,10 @@ function Header() {
         href="/favicon_io/favicon-16x16.png"
       />
       <link rel="manifest" href="/favicon_io/webmanifest" />
-      <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Crimson+Text&family=Playfair+Display&family=Press+Start+2P&display=swap" rel="stylesheet"/>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Caveat&family=Crimson+Text&family=Playfair+Display&family=Press+Start+2P&display=swap"
+        rel="stylesheet"
+      />
     </Head>
   );
 }
