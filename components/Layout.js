@@ -11,7 +11,7 @@ function Layout(props) {
       <Header />
       <AppNavbar user={user} />
       <Container>{props.children}</Container>
-      <AppFooter />
+      {/* <AppFooter /> */}
     </>
   );
 }

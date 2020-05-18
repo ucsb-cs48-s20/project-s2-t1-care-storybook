@@ -51,25 +51,30 @@ class PlantGif extends React.Component {
   render() {
     // None of this css works
     return (
-      <div
-        style={{
-          position: "absolute",
-          left: "50%",
-          top: "50%",
-          transform: "translate(-50%, -75%)",
-          backgroundColor: "palegoldenrod",
-        }}
-      >
-        {/* <Image src={this.plantIMG} style = {{mixBlendMode: 'multiply', margin: 'auto', align: 'center'}}/> */}
-        <img
-          src={this.plantIMG}
-          style={{
-            maxWidth: "100%",
-            maxHeight: "100%",
-            mixBlendMode: "multiply",
-          }}
-        />
-        <pre>{JSON.stringify(this.firstLevel, null, "\t")}</pre>
+      <div class="container">
+        <div
+          class="column"
+          // style={{
+          //   position: "absolute",
+          //   left: "50%",
+          //   top: "50%",
+          //   transform: "translate(-50%, -75%)",
+          //   backgroundColor: "palegoldenrod",
+          // }}
+        >
+          {/* <Image src={this.plantIMG} style = {{mixBlendMode: 'multiply', margin: 'auto', align: 'center'}}/> */}
+          <img
+            src={this.plantIMG}
+            style={{
+              maxWidth: "100%",
+              maxHeight: "100%",
+              mixBlendMode: "multiply",
+            }}
+          />
+        </div>
+        <div class="column">
+          <pre>{JSON.stringify(this.firstLevel, null, "\t")}</pre>
+        </div>
       </div>
     );
   }
