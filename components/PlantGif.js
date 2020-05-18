@@ -1,10 +1,26 @@
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 
-let myStyle = {
-  width: "100px",
-  height: "100px",
-};
+function JSONDisplay(props) {
+  if ((props.json) === 0) {
+    return (
+      <p> Start growing by submitting a Journal entry! </p>
+    )
+  }else {
+    console.log(props.json[0])
+    const listItems = (props.json).map((element) =>
+      <>
+      <p> On {element.date}, you felt {element.todayMood} after getting {element.todaySleep[0]} hours of sleep.</p> 
+      <br/>
+      </>
+    );
+    return(
+    <>
+      <p> {listItems} </p>
+    </>
+    )
+  }
+}
 
 class PlantGif extends React.Component {
   constructor(props) {
@@ -49,33 +65,33 @@ class PlantGif extends React.Component {
   }
 
   render() {
-    // None of this css works
+    const jsonData = this.firstlevel;
+    let jsonDisplay;
+    if (jsonData === 0) {
+      jsonDisplay = <p>Start growing by submitting a Journal entry!</p>;
+    } else {
+      jsonDisplay = <p>{jsonData}</p>;
+    }
+  
+
     return (
-      <div className="container">
-        <div
-          className="column"
-          // style={{
-          //   position: "absolute",
-          //   left: "50%",
-          //   top: "50%",
-          //   transform: "translate(-50%, -75%)",
-          //   backgroundColor: "palegoldenrod",
-          // }}
-        >
-          {/* <Image src={this.plantIMG} style = {{mixBlendMode: 'multiply', margin: 'auto', align: 'center'}}/> */}
-          <img
-            src={this.plantIMG}
-            style={{
-              maxWidth: "100%",
-              maxHeight: "100%",
-              mixBlendMode: "multiply",
-            }}
-          />
+      <>
+        <div className="container" style = {{textAlign: 'center'}}>
+          <div className="column" style = {{display: "inline-block"}}>
+            <img
+              src={this.plantIMG}
+              style={{
+                maxWidth: "100%",
+                maxHeight: "100%",
+                mixBlendMode: "multiply",
+              }}
+            />
+          </div>
         </div>
         <div className="column">
-          <pre>{JSON.stringify(this.firstLevel, null, "\t")}</pre>
+          <JSONDisplay json = {this.firstLevel} />
         </div>
-      </div>
+      </>
     );
   }
 }
