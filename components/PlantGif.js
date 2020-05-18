@@ -51,9 +51,9 @@ class PlantGif extends React.Component {
   render() {
     // None of this css works
     return (
-      <div class="container">
+      <div className="container">
         <div
-          class="column"
+          className="column"
           // style={{
           //   position: "absolute",
           //   left: "50%",
@@ -72,7 +72,7 @@ class PlantGif extends React.Component {
             }}
           />
         </div>
-        <div class="column">
+        <div className="column">
           <pre>{JSON.stringify(this.firstLevel, null, "\t")}</pre>
         </div>
       </div>
