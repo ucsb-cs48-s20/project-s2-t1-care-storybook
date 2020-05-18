@@ -1,6 +1,11 @@
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 
+let myStyle = {
+  width: "100px",
+  height: "100px",
+};
+
 class PlantGif extends React.Component {
   constructor(props) {
     super(props);
@@ -39,10 +44,27 @@ class PlantGif extends React.Component {
   }
 
   render() {
+    // None of this css works
     return (
-      <>
-        <Image src={this.plantIMG}></Image>
-      </>
+      <div
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -75%)",
+          backgroundColor: "palegoldenrod",
+        }}
+      >
+        {/* <Image src={this.plantIMG} style = {{mixBlendMode: 'multiply', margin: 'auto', align: 'center'}}/> */}
+        <img
+          src={this.plantIMG}
+          style={{
+            maxWidth: "100%",
+            maxHeight: "100%",
+            mixBlendMode: "multiply",
+          }}
+        />
+      </div>
     );
   }
 }
