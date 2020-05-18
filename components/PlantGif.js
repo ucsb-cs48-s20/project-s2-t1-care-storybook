@@ -13,6 +13,7 @@ class PlantGif extends React.Component {
     this.state = { value: 0 };
     this.plant = 10;
     this.plantIMG = "plantframes/frame_00_delay-0.04s.gif";
+    this.firstLevel = 0;
   }
 
   async returnPlantLevel() {
@@ -39,6 +40,10 @@ class PlantGif extends React.Component {
       this.plant = 0;
     }
     console.log(this.plant);
+    if (plantLevel) {
+      console.log(plantLevel.testList);
+      this.firstLevel = plantLevel.testList;
+    }
 
     this.setState({ update: 0 });
   }
@@ -46,24 +51,30 @@ class PlantGif extends React.Component {
   render() {
     // None of this css works
     return (
-      <div
-        style={{
-          position: "absolute",
-          left: "50%",
-          top: "50%",
-          transform: "translate(-50%, -75%)",
-          backgroundColor: "palegoldenrod",
-        }}
-      >
-        {/* <Image src={this.plantIMG} style = {{mixBlendMode: 'multiply', margin: 'auto', align: 'center'}}/> */}
-        <img
-          src={this.plantIMG}
-          style={{
-            maxWidth: "100%",
-            maxHeight: "100%",
-            mixBlendMode: "multiply",
-          }}
-        />
+      <div className="container">
+        <div
+          className="column"
+          // style={{
+          //   position: "absolute",
+          //   left: "50%",
+          //   top: "50%",
+          //   transform: "translate(-50%, -75%)",
+          //   backgroundColor: "palegoldenrod",
+          // }}
+        >
+          {/* <Image src={this.plantIMG} style = {{mixBlendMode: 'multiply', margin: 'auto', align: 'center'}}/> */}
+          <img
+            src={this.plantIMG}
+            style={{
+              maxWidth: "100%",
+              maxHeight: "100%",
+              mixBlendMode: "multiply",
+            }}
+          />
+        </div>
+        <div className="column">
+          <pre>{JSON.stringify(this.firstLevel, null, "\t")}</pre>
+        </div>
       </div>
     );
   }

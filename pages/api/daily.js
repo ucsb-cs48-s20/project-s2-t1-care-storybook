@@ -20,7 +20,7 @@ import { database } from "../../utils/database";
 //   return users.findOne(query);
 // }
 
-async function getPlantLevel(req) {
+async function getUser(req) {
   const { sub } = req.query;
 
   if (!sub) {
@@ -60,6 +60,12 @@ async function updatePlantLevel(req) {
     $inc: {
       PlantLevel: req.body.plantLevel,
     },
+    $push: {
+      testList: {
+        $each: [req.body.entry],
+        $position: 0,
+      },
+    },
   };
 
   const result = await users.findOneAndUpdate(
@@ -77,7 +83,7 @@ async function updatePlantLevel(req) {
 async function performAction(req, res) {
   switch (req.method) {
     case "GET":
-      const plantLevel = await getPlantLevel(req);
+      const plantLevel = await getUser(req);
       res.end(JSON.stringify(plantLevel));
       return;
     case "POST":

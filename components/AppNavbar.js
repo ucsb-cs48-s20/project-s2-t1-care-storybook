@@ -24,6 +24,12 @@ function AppNavbar(props) {
               </Link>
             )}
           </Nav>
+          <Link
+            href="https://github.com/ucsb-cs48-s20/project-s2-t1-care"
+            passHref={true}
+          >
+            <Navbar.Brand>github</Navbar.Brand>
+          </Link>
           <Nav>
             {user ? (
               <NavDropdown
