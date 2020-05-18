@@ -31,7 +31,7 @@ async function getUser(req) {
   }
 
   const client = await database();
-  const users = client.collection("users_QA");
+  const users = client.collection("users");
 
   return users.findOne({ "user.sub": sub }, { PlantLevel: 1 });
 }
@@ -47,7 +47,7 @@ async function updatePlantLevel(req) {
   }
 
   const client = await database();
-  const users = client.collection("users_QA");
+  const users = client.collection("users");
 
   /*const query = {
     user,
