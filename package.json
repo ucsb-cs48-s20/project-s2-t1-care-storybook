@@ -28,6 +28,7 @@
     "next": "9.3.2",
     "next-connect": "^0.6.5",
     "react": "16.13.1",
+    "react-background-animation": "^1.0.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "16.13.1",
     "react-router-dom": "^5.1.2",

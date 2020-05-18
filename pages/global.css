@@ -1,0 +1,20 @@
+/*
+Imported Fonts: 
+font-family: 'Crimson Text', serif;
+font-family: 'Caveat', cursive;
+font-family: 'Playfair Display', serif;
+font-family: 'Press Start 2P', cursive;
+*/
+
+.everything {
+  background-color: green;
+}
+
+body {
+  /* background-image: url("../public/plantframes/frame_00_delay-0.04s.gif"); */
+  color: rgba(19, 164, 31, 0.768);
+  color: hsl(80, 240, 189);
+  font-family: "Crimson Text", serif;
+  font-size: large;
+  background-color: palegoldenrod;
+}
