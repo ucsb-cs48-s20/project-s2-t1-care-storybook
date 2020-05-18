@@ -50,6 +50,8 @@ export class JournalForm extends React.Component {
       const userObj = await res.json();
       mutate(userObj);
     } */
+
+    //delay, you submitted _ something and will be redirected
     Router.push("/");
   }
 
