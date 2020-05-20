@@ -40,6 +40,7 @@ export class JournalForm extends React.Component {
       plantLevel: plantLevel,
       entry: entry,
     };
+    //get request, make sure they have submitted as different day
 
     const res = await fetch("/api/daily", {
       method: "POST",
@@ -52,6 +53,7 @@ export class JournalForm extends React.Component {
     } */
 
     //delay, you submitted _ something and will be redirected
+
     Router.push("/");
   }
 

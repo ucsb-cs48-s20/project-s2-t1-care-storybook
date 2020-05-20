@@ -11,7 +11,7 @@ function JSONDisplay(props) {
         <p>
           {" "}
           On {element.date}, you felt {element.todayMood} and got{" "}
-          {element.todaySleep[0]} hour(s) of sleep.
+          {element.todaySleep} of sleep.
         </p>
         <br />
       </>
@@ -28,7 +28,7 @@ class PlantGif extends React.Component {
   constructor(props) {
     super(props);
     this.user = props.user;
-    this.state = { plantLevel: 0, testList: [] };
+    this.state = { plantLevel: 0, testList: [], plant2: 0 };
     this.plant = 10;
     this.plantIMG = "plantframes/frame_00_delay-0.04s.gif";
     this.firstLevel = 0;
@@ -62,9 +62,9 @@ class PlantGif extends React.Component {
       console.log(plantLevel.testList);
       this.firstLevel = plantLevel.testList;
     }
-
-    this.setState({ plantLevel: plantLevel });
-    console.log(plantLevel.testList);
+    if (plantLevel) {
+      this.setState({ plantLevel: plantLevel, plant2: plantLevel.PlantLevel });
+    }
   }
 
   render() {
