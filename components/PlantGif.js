@@ -2,23 +2,25 @@ import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 
 function JSONDisplay(props) {
-  if ((props.json) === 0) {
-    return (
-      <p> Start growing by submitting a Journal entry! </p>
-    )
-  }else {
-    console.log(props.json[0])
-    const listItems = (props.json).map((element) =>
+  if (props.json === 0) {
+    return <p> Start growing by submitting a Journal entry! </p>;
+  } else {
+    console.log(props.json[0]);
+    const listItems = props.json.map((element) => (
       <>
-      <p> On {element.date}, you felt {element.todayMood} after getting {element.todaySleep[0]} hours of sleep.</p> 
-      <br/>
+        <p>
+          {" "}
+          On {element.date}, you felt {element.todayMood} after getting{" "}
+          {element.todaySleep[0]} hours of sleep.
+        </p>
+        <br />
+      </>
+    ));
+    return (
+      <>
+        <p> {listItems} </p>
       </>
     );
-    return(
-    <>
-      <p> {listItems} </p>
-    </>
-    )
   }
 }
 
@@ -72,12 +74,11 @@ class PlantGif extends React.Component {
     } else {
       jsonDisplay = <p>{jsonData}</p>;
     }
-  
 
     return (
       <>
-        <div className="container" style = {{textAlign: 'center'}}>
-          <div className="column" style = {{display: "inline-block"}}>
+        <div className="container" style={{ textAlign: "center" }}>
+          <div className="column" style={{ display: "inline-block" }}>
             <img
               src={this.plantIMG}
               style={{
@@ -89,7 +90,7 @@ class PlantGif extends React.Component {
           </div>
         </div>
         <div className="column">
-          <JSONDisplay json = {this.firstLevel} />
+          <JSONDisplay json={this.firstLevel} />
         </div>
       </>
     );
