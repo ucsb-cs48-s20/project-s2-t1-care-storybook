@@ -28,7 +28,7 @@ class PlantGif extends React.Component {
   constructor(props) {
     super(props);
     this.user = props.user;
-    this.state = { value: 0 };
+    this.state = { plantLevel: 0, testList: [] };
     this.plant = 10;
     this.plantIMG = "plantframes/frame_00_delay-0.04s.gif";
     this.firstLevel = 0;
@@ -63,7 +63,8 @@ class PlantGif extends React.Component {
       this.firstLevel = plantLevel.testList;
     }
 
-    this.setState({ update: 0 });
+    this.setState({ plantLevel: plantLevel });
+    console.log(plantLevel.testList);
   }
 
   render() {
