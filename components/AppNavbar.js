@@ -35,7 +35,7 @@ function AppNavbar(props) {
               <NavDropdown
                 title={
                   <>
-                    Hi, {user.name}
+                    hi, {user.name}
                     <Image
                       className="ml-2"
                       src={user.picture}
@@ -46,12 +46,12 @@ function AppNavbar(props) {
                 }
               >
                 <NavDropdown.Item className="text-danger" href="/api/logout">
-                  Logout
+                  logout
                 </NavDropdown.Item>
               </NavDropdown>
             ) : (
               <Button variant="success" data-cy="login" href="/api/login">
-                Login
+                login
               </Button>
             )}
           </Nav>
