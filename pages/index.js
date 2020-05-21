@@ -24,8 +24,8 @@ function HomePage(props) {
         </div>
       ) : (
         <div>
-          <h1>You're not logged in!</h1>
-          <h2>Please sign in to start growing together with your plant!</h2>
+          <h1>you're not logged in!</h1>
+          <h2>please sign in to start growing together with your plant!</h2>
         </div>
       )}
     </Layout>

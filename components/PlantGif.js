@@ -3,15 +3,15 @@ import Image from "react-bootstrap/Image";
 
 function JSONDisplay(props) {
   if (props.json === 0) {
-    return <p> Start growing by submitting a Journal entry! </p>;
+    return <p> start growing by submitting a journal entry! </p>;
   } else {
     console.log(props.json[0]);
     const listItems = props.json.map((element) => (
       <>
         <p>
           {" "}
-          On {element.date}, you felt {element.todayMood} and got{" "}
-          {element.todaySleep[0]} hour(s) of sleep.
+          on {element.date}, you felt {element.todayMood} and got{" "}
+          {element.todaySleep} of sleep.
         </p>
         <br />
       </>
@@ -28,7 +28,7 @@ class PlantGif extends React.Component {
   constructor(props) {
     super(props);
     this.user = props.user;
-    this.state = { value: 0 };
+    this.state = { plantLevel: 0, testList: [], plant2: 0 };
     this.plant = 10;
     this.plantIMG = "plantframes/frame_00_delay-0.04s.gif";
     this.firstLevel = 0;
@@ -62,8 +62,9 @@ class PlantGif extends React.Component {
       console.log(plantLevel.testList);
       this.firstLevel = plantLevel.testList;
     }
-
-    this.setState({ update: 0 });
+    if (plantLevel) {
+      this.setState({ plantLevel: plantLevel, plant2: plantLevel.PlantLevel });
+    }
   }
 
   render() {
