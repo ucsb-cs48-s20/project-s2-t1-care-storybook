@@ -10,7 +10,7 @@ export default {
 //<PlantGif user={user} style={{ backgroundColor: "transparent" }} />
 
 
-export const newPlant = () => {
+export const noLogin = () => {
   const json = 0;
   return <PlantGif json = {json}/>;
 };
@@ -25,6 +25,7 @@ export const loggedIn = () => {
   const sub = text("ID", "google-oauth2|112141203730427097678");
   const user = { name, role, picture, sub };
   const plant = 10;
+  const json = 0;
 
-  return <PlantGif user={user} plant = {plant}/>;
+  return <PlantGif user={user} plant = {plant} json = {json}/>;
 };
