@@ -25,7 +25,7 @@
     "dotenv": "^8.2.0",
     "isomorphic-unfetch": "^3.0.0",
     "mongodb": "^3.5.6",
-    "next": "9.3.2",
+    "next": "9.5.5",
     "next-connect": "^0.6.5",
     "react": "16.13.1",
     "react-background-animation": "^1.0.1",
@@ -37,7 +37,7 @@
   "devDependencies": {
     "@rckeller/cypress-unfetch": "^1.0.1",
     "cypress": "^4.2.0",
-    "danger": "^10.0.0",
+    "danger": "^11.2.1",
     "heroku-dotenv": "^0.4.1",
     "husky": "^4.2.3",
     "inquirer": "^7.1.0",
